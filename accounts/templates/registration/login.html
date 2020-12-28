@@ -1,0 +1,37 @@
+{% extends  'accounts/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+
+
+<div class="card">
+<div class="card-body">
+<h4 class="card-title">Войдите в свой аккаунт</h4>
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+  {% if form.errors %}
+    <p>{{ error }}Your username and password didn't match. Please try again.</p>
+  {% endif %}
+
+  {% if next %}
+     {% if user.is_authenticated %}
+<p class="errornote">
+    Вы зарегистрировались как {{ username}}
+</p>
+    {% else %}
+      <p>Please login to see this page.</p>
+    {% endif %}
+  {% endif %}
+
+{{ form|crispy }}
+<input type="hidden" name="next" value="{{ next }}">Login: <input type="text" name="username" class="form-control"><br>
+Пароль: <input type="password" name="password" class="form-control"><br>
+
+
+<button type="submit" class="btn btn-primary btn-block" value="login">Log in</button>
+</form>
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+</div>
+</div>
+{% endblock %}

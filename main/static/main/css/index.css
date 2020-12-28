@@ -1,0 +1,27 @@
+body {
+	background-color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+div #navbar {
+	background-color: #1086C1;
+}
+
+a img {
+	width: : 60px;
+	height: 60px;
+}
+#link {
+	color: #293A4C;
+	display: inline-block;
+	transition: transform 0.1s;
+}
+
+#link:hover{
+	color: #eb5959;
+	text-decoration-line: none;
+	transform: scale(1.05)
+}

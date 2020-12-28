@@ -1,0 +1,34 @@
+.mainmenubtn {
+    background-color: #fff;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding:6px;
+    margin-top:6px;
+    text-decoration-color: #000;
+}
+
+.mainmenubtn:hover {
+    background-color: #007BFF;
+    border-radius: 4px;
+    border-color: #007BFF;
+    }
+    
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-child {
+    display: none;
+    background-color: black;
+    min-width: 200px;
+}
+.dropdown-child a {
+    color: 007BFF;
+    padding: 6px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
+}
